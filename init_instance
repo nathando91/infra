@@ -23,6 +23,22 @@ sudo usermod -aG docker $USER
 # Cài đặt Git
 sudo apt install -y git
 
+# Cài đặt Nginx
+sudo apt install -y nginx
+
+# Cài đặt Certbot (Let's Encrypt) cho Nginx
+sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot --nginx
+
+# Cài đặt các tiện ích khác có thể hữu ích
+sudo apt install -y htop      # Tiện ích quản lý tài nguyên hệ thống
+sudo apt install -y ufw       # Công cụ tường lửa
+sudo ufw allow 'Nginx Full'   # Mở cổng cho Nginx qua UFW
+sudo ufw allow ssh            # Đảm bảo SSH có thể truy cập qua UFW
+sudo ufw enable               # Kích hoạt UFW
+
 # Hiển thị phiên bản của các phần mềm đã cài đặt
 echo "NodeJS version:"
 node -v
@@ -32,3 +48,5 @@ echo "Docker version:"
 docker --version
 echo "Git version:"
 git --version
+echo "Nginx version:"
+nginx -v
