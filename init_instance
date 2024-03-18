@@ -45,6 +45,9 @@ git clone https://github.com/docker/docker-compose.git ${ZSH_CUSTOM:-~/.oh-my-zs
 # Cấu hình .zshrc để sử dụng plugins
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker docker-compose)/' ~/.zshrc
 
+# Đặt Zsh làm shell mặc định
+chsh -s $(which zsh)
+
 # Hiển thị phiên bản của các phần mềm đã cài đặt
 echo "NodeJS version:"
 node -v
