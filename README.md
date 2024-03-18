@@ -1,5 +1,7 @@
 # INIT VPS INSTANCE
-curl https://raw.githubusercontent.com/nathando91/infra/main/init_instant | sh
+```
+curl https://raw.githubusercontent.com/nathando91/infra/main/init_instance | sh
+```
 
 # GIT HOOK
 Git Pre-Commit Hook Installer This repository hosts a script designed to automate the installation of a pre-commit hook for Git projects. The pre-commit hook script included within ensures that Git local user configuration is set before allowing commits. This is crucial for maintaining security and compliance with project-specific user information requirements.
