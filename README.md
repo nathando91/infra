@@ -28,4 +28,7 @@ Usage Once installed, the pre-commit hook automatically runs each time git commi
 
 Contributing We welcome contributions to improve the installation script or the pre-commit hook functionality. Please feel free to fork the repository, make your changes, and submit a pull request.
 
-# OTHERS
+# PROXY
+```
+curl -Ls https://raw.githubusercontent.com/nathando91/infra/main/proxy | sh
+```
