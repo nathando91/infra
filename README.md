@@ -29,6 +29,12 @@ Usage Once installed, the pre-commit hook automatically runs each time git commi
 Contributing We welcome contributions to improve the installation script or the pre-commit hook functionality. Please feel free to fork the repository, make your changes, and submit a pull request.
 
 # PROXY
+## Ubuntu
 ```
-curl -Ls https://raw.githubusercontent.com/nathando91/infra/main/proxy | sh
+curl -Ls https://raw.githubusercontent.com/nathando91/infra/main/proxy_ubuntu.sh | sh
 ```
+## AWS Linux 2023
+```
+curl -Ls https://raw.githubusercontent.com/nathando91/infra/main/proxy_aws_linux.sh | sh
+```
+
