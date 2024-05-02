@@ -8,7 +8,7 @@ sudo apt install -y squid apache2-utils
 sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.original
 
 # Create a user and password
-sudo htpasswd -b -c /etc/squid/passwd nathando nathanDo@123
+sudo htpasswd -b -c /etc/squid/passwd nathando nathanDo2024
 
 # Configure Squid to use authentication and set the listening port
 echo "auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
