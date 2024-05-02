@@ -1,25 +1,26 @@
 #!/bin/bash
 
-# Cập nhật hệ thống và cài đặt Squid và Apache Utils
+# Update the system and install Squid and Apache Utils
 sudo apt update
 sudo apt install -y squid apache2-utils
 
-# Sao lưu file cấu hình gốc của Squid
+# Backup the original Squid configuration file
 sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.original
 
-# Tạo người dùng và mật khẩu
-sudo htpasswd -b -c /etc/squid/passwd nathando nathanDo2024
+# Create a user and password
+sudo htpasswd -b -c /etc/squid/passwd nathando nathanDo@123
 
-# Cấu hình Squid để sử dụng xác thực
+# Configure Squid to use authentication and set the listening port
 echo "auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwd
 auth_param basic realm proxy
 acl authenticated proxy_auth REQUIRED
 http_access allow authenticated
-http_access deny all" | sudo tee /etc/squid/squid.conf
+http_access deny all
+http_port 0.0.0.0:3128" | sudo tee /etc/squid/squid.conf
 
-# Khởi động lại Squid để áp dụng cấu hình
-sudo systemctl restart squid
+# Restart and enable Squid service
 sudo systemctl enable squid
+sudo systemctl restart squid
 
-# In ra thông báo hoàn tất
-echo "Squid proxy server has been installed and configured with user authentication."
+# Print completion message
+echo "Squid proxy server has been installed and configured with user authentication and proper port settings."
