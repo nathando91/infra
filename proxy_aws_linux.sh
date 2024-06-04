@@ -8,7 +8,7 @@ sudo yum install -y squid httpd-tools
 sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.original
 
 # Create a user and password
-sudo htpasswd -b -c /etc/squid/passwd nathando nathanDo2024
+sudo htpasswd -b -c /etc/squid/passwd naikyo naikyoSoftware2024
 
 # Configure Squid to use authentication and set the listening port
 echo "auth_param basic program /usr/lib64/squid/basic_ncsa_auth /etc/squid/passwd
