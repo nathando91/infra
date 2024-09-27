@@ -3,11 +3,8 @@
 # Cập nhật hệ thống
 sudo apt update && sudo apt upgrade -y
 echo "openssh-server openssh-server/sshd_config select true" | sudo debconf-set-selections
-sudo apt-get install -y openssh-server
-sudo apt install unattended-upgrades
-sudo dpkg-reconfigure --priority=low unattended-upgrades
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y openssh-server
 sudo apt upgrade -y
-
 # Cài đặt các tiện ích cần thiết
 sudo apt install -y curl wget git zsh
 
