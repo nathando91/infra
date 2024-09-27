@@ -68,3 +68,9 @@ git --version
 # Reboot after 30s
 sleep 30
 reboot
+
+# Cập nhật cho Ubuntu 24.04
+# Thay đổi các kho lưu trữ nếu cần thiết
+# sudo sed -i 's/jammy/lunar/g' /etc/apt/sources.list
+# sudo apt update
+# sudo apt upgrade -y
