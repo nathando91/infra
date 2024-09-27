@@ -1,6 +1,6 @@
 # INIT VPS INSTANCE
 ```
-curl https://raw.githubusercontent.com/nathando91/infra/main/init_instance | sh
+curl https://raw.githubusercontent.com/nathando91/infra/main/init_instance.sh | sh
 ```
 
 # INSTALL NEOVIM
