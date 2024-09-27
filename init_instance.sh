@@ -7,6 +7,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y unattended-upgrades
 sudo dpkg-reconfigure --frontend=noninteractive unattended-upgrades
 sudo apt upgrade -y
 
+# Cài đặt kernel mới nhất
+sudo apt install -y linux-generic
+
 # Cài đặt các tiện ích cần thiết
 sudo apt install -y curl wget git zsh
 
