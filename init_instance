@@ -2,7 +2,8 @@
 
 # Cập nhật hệ thống
 sudo apt update && sudo apt upgrade -y
-
+echo "openssh-server openssh-server/sshd_config select true" | sudo debconf-set-selections
+sudo apt-get install -y openssh-server
 # Cài đặt các tiện ích cần thiết
 sudo apt install -y curl wget git zsh
 
@@ -62,3 +63,7 @@ echo "Certbot version:"
 certbot --version
 echo "Git version:"
 git --version
+
+# Reboot after 30s
+sleep 30
+reboot
