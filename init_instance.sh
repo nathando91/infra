@@ -13,14 +13,6 @@ sudo apt update && sudo apt upgrade -y
 # Cài đặt các tiện ích cần thiết
 sudo apt install -y curl wget git zsh
 
-# Cài đặt NodeJS phiên bản mới nhất sử dụng nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install node # Cài đặt phiên bản mới nhất của Node.js
-nvm use node
-
 # Cài đặt Docker
 sudo apt install -y apt-transport-https ca-certificates software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -53,6 +45,14 @@ sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting
 
 # Đặt Zsh làm shell mặc định
 chsh -s $(which zsh)
+
+# Cài đặt NodeJS phiên bản mới nhất sử dụng nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install node # Cài đặt phiên bản mới nhất của Node.js
+nvm use node
 
 # Hiển thị phiên bản của các phần mềm đã cài đặt
 echo "NodeJS version:"
